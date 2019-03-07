@@ -30,14 +30,6 @@ export default class HomeScreen extends React.Component {
               }
               style={styles.welcomeImage}
             />
-             <Image
-              source={
-                __DEV__
-                  ? require('../assets/images/dimisetlogo.jpg')
-                  : require('../assets/images/dimisetlogo.jpg')
-              }
-              style={styles.welcomeImage}
-            />
           </View>
 
           <View style={styles.getStartedContainer}>
