@@ -12,7 +12,7 @@ import {
 export default class ChoriScreen extends React.Component {
 
     static navigationOptions = {
-        title: 'Chori Test Screen',
+        title: 'HTTP request to https://facebook.github.io/react-native/movies.json',
     };
 
     constructor(props){
@@ -35,6 +35,7 @@ export default class ChoriScreen extends React.Component {
             <ScrollView style={styles.container}>
                 <Text>
                     HTTP request to https://facebook.github.io/react-native/movies.json
+
                 </Text>
                 <FlatList
                     data={this.state.dataSource}
@@ -49,6 +50,11 @@ export default class ChoriScreen extends React.Component {
                         : require('../assets/images/muerdo.negro-dms.jpg')
                     }
                 />
+                <FlatList
+                    data={this.state.dataSource}
+                    renderItem={({item}) => <Text>{item.title}, {item.releaseYear}</Text>}
+                    keyExtractor={({id}, index) => id}
+                    />
             </ScrollView>
         );
     }
@@ -80,8 +86,8 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff',
     },
     muerdoNegroImage: {
-      width: 100,
-      height: 80,
+      width: 300,
+      height: 300,
       resizeMode: 'contain',
       marginTop: 3,
       marginLeft: -10,
